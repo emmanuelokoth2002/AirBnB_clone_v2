@@ -3,7 +3,7 @@
 creates and distributes an archive to your web servers, using the function
 deploy
 """
-from fabric.api import env, run, put
+from fabric.api import *
 from os.path import exists
 from datetime import datetime
 from fabric.contrib import files

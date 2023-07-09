@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+creates and distributes an archive to your web servers, using the function
+deploy
+"""
 from fabric.api import env, run, put
 from os.path import exists
 from datetime import datetime
@@ -5,6 +10,7 @@ from fabric.contrib import files
 
 # Define the remote hosts
 env.hosts = ['52.91.152.63', '54.144.45.151']
+
 
 def do_pack():
     """Create a .tgz archive from the contents of the web_static folder."""
@@ -23,6 +29,7 @@ def do_pack():
         return None
     else:
         return archive_path
+
 
 def do_deploy(archive_path):
     """Distribute an archive to the web servers."""
@@ -49,6 +56,7 @@ def do_deploy(archive_path):
     run("ln -s {} /data/web_static/current".format(release_path))
 
     return True
+
 
 def deploy():
     """Create and distribute an archive to the web servers."""

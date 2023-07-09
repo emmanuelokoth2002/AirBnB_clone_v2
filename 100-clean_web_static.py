@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+#deletes out-of-date archives, using the function do_clean
 from fabric.api import env, run, local
 from fabric.context_managers import lcd
 from datetime import datetime

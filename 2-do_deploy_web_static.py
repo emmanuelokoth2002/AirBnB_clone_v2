@@ -1,11 +1,26 @@
-from fabric.api import env, run, put
+#!/usr/bin/python3
+"""
+This module contains Fabric functions to distribute an archive to the web
+servers.
+"""
+
+from fabric.api import env, put, run
 from os.path import exists
 
 # Define the remote hosts
-env.hosts = ['<IP web-01>', '<IP web-02>']
+env.hosts = ['54.144.45.151', '52.91.152.63']
+
 
 def do_deploy(archive_path):
-    """Distribute an archive to the web servers."""
+    """
+    Distribute an archive to the web servers.
+
+    Args:
+        archive_path (str): The path of the archive to be distributed.
+
+    Returns:
+        bool: True if the distribution was successful, False otherwise.
+    """
     if not exists(archive_path):
         return False
 

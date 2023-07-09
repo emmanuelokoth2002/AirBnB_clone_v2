@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-#deletes out-of-date archives, using the function do_clean
+# deletes out-of-date archives, using the function do_clean
 from fabric.api import env, run, local
 from fabric.context_managers import lcd
 from datetime import datetime
 
 # Define the remote hosts
 env.hosts = ['<IP web-01>', '<IP web-02>']
+
 
 def do_clean(number=0):
     """Delete out-of-date archives."""

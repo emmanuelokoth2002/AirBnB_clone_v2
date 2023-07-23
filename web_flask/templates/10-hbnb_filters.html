@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<HTML LANG="en">
+<HEAD>
+    <TITLE>HBNB</TITLE>
+    <LINK REL="stylesheet" HREF="https://unpkg.com/normalize.css/8.0.1/normalize.css">
+    <LINK REL="stylesheet" HREF="/static/styles/3-header.css">
+    <LINK REL="stylesheet" HREF="/static/styles/4-common.css">
+    <LINK REL="stylesheet" HREF="/static/styles/6-filters.css">
+</HEAD>
+<BODY>
+    <HEADER>
+        <NAV CLASS="nav">
+            <DIV CLASS="container">
+                <DIV CLASS="nav__logo">
+                    <A HREF="/">
+                        <IMG SRC="/static/images/logo.png" ALT="AirBnB_logo" CLASS="nav__logo-image">
+                    </A>
+                </DIV>
+            </DIV>
+        </NAV>
+    </HEADER>
+    <SECTION CLASS="content">
+        <DIV CLASS="container">
+            <H1 CLASS="filters">Places</H1>
+            <DIV CLASS="places">
+                <DIV CLASS="places__filter">
+                    <H2 CLASS="places__subtitle">States</H2>
+                    <DIV CLASS="places__h4">&nbsp;</DIV>
+                    <UL CLASS="places__options">
+                        {% for state in states %}
+                        <LI>{{ state.name }}</LI>
+                        {% endfor %}
+                    </UL>
+                </DIV>
+                <DIV CLASS="places__filter">
+                    <H2 CLASS="places__subtitle">Cities</H2>
+                    <DIV CLASS="places__h4">&nbsp;</DIV>
+                    <UL CLASS="places__options">
+                        {% for city in cities %}
+                        <LI>{{ city.name }}</LI>
+                        {% endfor %}
+                    </UL>
+                </DIV>
+                <DIV CLASS="places__filter">
+                    <H2 CLASS="places__subtitle">Amenities</H2>
+                    <DIV CLASS="places__h4">&nbsp;</DIV>
+                    <UL CLASS="places__options">
+                        {% for amenity in amenities %}
+                        <LI>{{ amenity.name }}</LI>
+                        {% endfor %}
+                    </UL>
+                </DIV>
+            </DIV>
+        </DIV>
+    </SECTION>
+    <FOOTER CLASS="footer">
+        <DIV CLASS="container">
+            <DIV CLASS="footer__logo">
+                <A HREF="/">
+                    <IMG SRC="/static/images/icon.png" ALT="AirBnB_icon" CLASS="footer__logo-image">
+                </A>
+            </DIV>
+        </DIV>
+    </FOOTER>
+</BODY>
+</HTML>
+

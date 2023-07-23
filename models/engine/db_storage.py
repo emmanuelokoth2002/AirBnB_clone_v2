@@ -37,7 +37,7 @@ class DBStorage:
             results = self.__session.query(State).all()
             results.extend(self.__session.query(City).all())
             results.extend(self.__session.query(Place).all())
-        return {f"{type(obj).__name__}.{obj.id}": obj for obj in results}
+        return {f"{type(obj).__name__}.{obj.id}".obj for obj in results}
 
     def new(self, obj):
         """add the object to the current database session"""
@@ -57,3 +57,7 @@ class DBStorage:
         Base.metadata.create_all(self.__engine)
         session = sessionmaker(bind=self.__engine, expire_on_commit=False)
         self.__session = scoped_session(session)
+
+    def close(self):
+        """Call remove() method on the private session attribute"""
+        self.__session.close()

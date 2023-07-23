@@ -19,7 +19,8 @@ def states():
     """
     Displays a HTML page with a list of states.
     """
-    states = sorted(storage.all('State').values(), key=lambda state: state.name)
+    states = sorted(storage.all('State').values(), key=lambda
+                    state: state.name)
     return render_template('9-states.html', states=states)
 
 

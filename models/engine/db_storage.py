@@ -21,10 +21,14 @@ class DBStorage:
     def __init__(self):
         """Initializes an instance"""
         self.__engine = create_engine("mysql+mysqldb://{}:{}@{}/{}"
-                                      .format(os.environ.get('HBNB_MYSQL_USER'),
-                                          os.environ.get('HBNB_MYSQL_PWD'),
-                                          os.environ.get('HBNB_MYSQL_HOST'),
-                                          os.environ.get('HBNB_MYSQL_DB')),
+                                      .format(os.environ.get('HBNB_MYSQL_US
+                                                             ER'),
+                                              os.environ.get('HBNB_MYSQL_P
+                                                             WD'),
+                                              os.environ.get('HBNB_MYSQL_HO
+                                                             ST'),
+                                              os.environ.get('HBNB_MYSQL_
+                                                             DB')),
                                       pool_pre_ping=True)
         if os.environ.get('HBNB_ENV') == 'test':
             Base.metadata.drop_all(self.__engine)

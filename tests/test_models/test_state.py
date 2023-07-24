@@ -17,3 +17,5 @@ class test_state(test_basemodel):
         """ """
         new = self.value()
         self.assertEqual(type(new.name), str)
+        self.assertTrue(hasattr(new, "name"))
+        self.assertEqual(new.name, "")
